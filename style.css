@@ -1,4 +1,8 @@
+/* =========================
+   RESPONSIVE (AJUSTADO)
+========================= */
 
+/* Corrección en el botón hover fuera del media query */
 .btn:hover {
     transform: translateY(-5px); /* Se corrigió background:translateY por transform */
     background: linear-gradient(45deg, #ff2b2b, #8B0000);
