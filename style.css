@@ -2,6 +2,20 @@
    ESTILOS GENERALES
 ========================= */
 
+/* Estilos aplicables solo a pantallas de 768px o menos (Celulares y Tablets) */
+@media (max-width: 768px) {
+  
+  body {
+    font-size: 14px; /* Letra un poco más pequeña */
+  }
+
+  /* Si tienes elementos uno al lado del otro, haz que se pongan uno sobre otro */
+  .columna {
+    width: 100%;
+    display: block;
+  }
+  
+}
 *{
     margin:0;
     padding:0;
