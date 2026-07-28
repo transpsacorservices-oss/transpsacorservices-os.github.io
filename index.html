@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transportes SACOR</title>
+    <title>Transportes SACOR | Logística y Transporte Terrestre</title>
     
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
@@ -15,8 +15,9 @@
         <nav>
             <div class="logo">
                 <img src="logo.jpeg" alt="Logo SACOR">
-                <h2>TRANSPORTES SACOR</h2>
+                <h2>TRANSPORTES <span>SACOR</span></h2>
             </div>
+
 
             <ul class="menu">
                 <li><a href="#inicio">Inicio</a></li>
@@ -34,44 +35,84 @@
         </nav>
 
         <div class="hero">
-            <h1>TRANSPORTES SACOR</h1>
-            <p>Servicio Profesional de Transporte y Logística</p>
-            <a href="#quienes" class="btn">Conoce Más</a>
+            <div class="hero-content">
+                <h1>TRANSPORTES <span>SACOR</span></h1>
+                <p>Seguridad y servicio</p>
+                <div class="hero-btns">
+                    <a href="#contacto" class="btn btn-primary">Solicitar Cotización</a>
+                    <a href="#servicios" class="btn btn-secondary">Ver Servicios</a>
+                </div>
+            </div>
         </div>
     </header>
 
+    <!-- BANNER DE ESTADÍSTICAS / LOGROS -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <i class="fas fa-route"></i>
+            <h3>+100%</h3>
+            <p>Entregas a tiempo y seguras</p>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-map-marked-alt"></i>
+            <h3>32+</h3>
+            <p>Estados Cubiertos</p>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-clock"></i>
+            <h3>365</h3>
+            <p>Días de Atención</p>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-shield-alt"></i>
+            <h3>100%</h3>
+            <p>Carga Segura</p>
+        </div>
+    </div>
+
     <!-- ¿QUIÉNES SOMOS? -->
     <section id="quienes">
-        <h2>¿Quiénes Somos?</h2>
-        <div class="quienes-contenido">
-            <p>
-                Somos una empresa 100% mexicana enfocada en brindar un excelente servicio de transporte terrestre.
-                Comprometidos con nuestros clientes, buscamos satisfacer todas sus necesidades en logística y transporte.
-                Contamos con personal altamente capacitado, atención personalizada las 24 horas, los 365 días del año y tecnología de punta para el monitoreo de cada unidad.
-                Nuestro compromiso es brindar seguridad, puntualidad y confianza en cada traslado.
-            </p>
-            <img src="familia.jpeg" alt="Familia SACOR" class="img-responsive">
+        <h2 class="title-glow">¿Quiénes Somos?</h2>
+        <div class="quienes-grid">
+            <div class="quienes-texto">
+                <p>
+                    Somos una empresa 100% mexicana enfocada en brindar un excelente servicio de transporte terrestre y soluciones logísticas integrales.
+                </p>
+                <p>
+                    Contamos con personal altamente capacitado, atención personalizada las 24 horas y tecnología de punta para el monitoreo en tiempo real de cada unidad.
+                </p>
+                <div class="puntos-clave">
+                    <div><i class="fas fa-check-circle"></i> Personal Capacitado</div>
+                    <div><i class="fas fa-check-circle"></i> monitoreo</div>
+                    <div><i class="fas fa-check-circle"></i> Entregas a Tiempo</div>
+                </div>
+            </div>
+            <div class="quienes-img">
+                <div class="img-frame">
+                    <img src="familia.jpeg" alt="Equipo SACOR">
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- NOSOTROS: MISIÓN, VISIÓN Y VALORES -->
-    <section id="nosotros">
-        <h2>Misión y Visión</h2>
-        <div class="cards">
-            <div class="card">
-                <i class="fas fa-bullseye"></i>
+    <section id="nosotros" class="bg-darker">
+        <h2 class="title-glow">Nuestra Esencia</h2>
+        <div class="cards cards-2">
+            <div class="card card-glow">
+                <div class="icon-box"><i class="fas fa-bullseye"></i></div>
                 <h3>Misión</h3>
-                <p>Nuestro compromiso es contribuir al desarrollo social y económico de las familias mexicanas mediante servicios de transporte con calidad, profesionalismo y responsabilidad.</p>
+                <p>Contribuir al desarrollo social y económico mediante servicios de transporte con máxima calidad, profesionalismo y responsabilidad.</p>
             </div>
 
-            <div class="card">
-                <i class="fas fa-eye"></i>
+            <div class="card card-glow">
+                <div class="icon-box"><i class="fas fa-eye"></i></div>
                 <h3>Visión</h3>
-                <p>Ser reconocidos como una empresa líder en logística y transporte terrestre en todo México, destacando por nuestro servicio, cumplimiento y atención personalizada.</p>
+                <p>Ser reconocidos como la empresa líder en logística y transporte terrestre en todo México, destacando por nuestra puntualidad y excelencia.</p>
             </div>
         </div>
 
-        <h2 style="margin-top: 60px;">Valores</h2>
+        <h3 class="subtitle">Valores que nos Definen</h3>
         <div class="cards">
             <div class="valor">
                 <i class="fas fa-handshake"></i>
@@ -102,38 +143,45 @@
 
     <!-- SERVICIOS -->
     <section id="servicios">
-        <h2>Nuestros Servicios</h2>
+        <h2 class="title-glow">Nuestros Servicios</h2>
         <div class="cards">
             <div class="servicio">
                 <i class="fas fa-truck"></i>
                 <h3>Big Item</h3>
+                <p>Transporte especializado para cargas de gran volumen.</p>
             </div>
             <div class="servicio">
                 <i class="fas fa-box"></i>
                 <h3>Última Milla</h3>
+                <p>Entregas rápidas y eficientes hasta el destino final.</p>
             </div>
             <div class="servicio">
                 <i class="fas fa-users"></i>
                 <h3>Traslado de Personal</h3>
+                <p>Movilidad segura y puntual para el equipo de tu empresa.</p>
             </div>
             <div class="servicio">
                 <i class="fas fa-truck-fast"></i>
                 <h3>Traslado de Competencia</h3>
+                <p>Logística de alta velocidad para entregas críticas.</p>
             </div>
             <div class="servicio">
                 <i class="fas fa-box-open"></i>
                 <h3>Paquetería</h3>
+                <p>Manejo y envío cuidadoso de paquetes y mercancía.</p>
             </div>
             <div class="servicio">
                 <i class="fas fa-industry"></i>
                 <h3>Material y Maquinaria</h3>
+                <p>Transporte pesado para el sector industrial y construcción.</p>
             </div>
         </div>
     </section>
 
     <!-- COBERTURA -->
-    <section id="cobertura">
-        <h2>Cobertura</h2>
+    <section id="cobertura" class="bg-darker">
+        <h2 class="title-glow">Cobertura Nacional</h2>
+        <p class="section-desc">Conectamos los principales puntos estratégicos del país.</p>
         <div class="estados">
             <span>Puebla</span>
             <span>Tlaxcala</span>
@@ -151,42 +199,68 @@
             <span>Chiapas</span>
         </div>
         <div class="mapa-container">
-            <img src="mapa.jpeg" alt="Mapa Cobertura" class="img-responsive">
+            <div class="img-frame">
+                <img src="mapa.jpeg" alt="Mapa de Cobertura SACOR">
+            </div>
         </div>
     </section>
 
     <!-- CERTIFICACIONES -->
     <section id="certificaciones">
-        <h2>Certificaciones</h2>
-        <div class="cards">
+        <h2 class="title-glow">Certificaciones</h2>
+        <div class="cards cards-3">
             <div class="cert">
-                <i class="fas fa-award"></i>
+                <img src="images.jpeg" alt="Certificación REPSE">
                 <h3>REPSE</h3>
             </div>
             <div class="cert">
-                <i class="fas fa-award"></i>
+                <img src="DUNS.jpeg" alt="Certificación Dun & Bradstreet">
                 <h3>DUN & BRADSTREET</h3>
             </div>
             <div class="cert">
-                <i class="fas fa-award"></i>
+                <img src="SICAD.jpg" alt="Certificación SICAD">
                 <h3>SICAD</h3>
             </div>
         </div>
     </section>
 
     <!-- CONTACTO -->
-    <section id="contacto">
-        <h2>Contáctanos</h2>
-        <div class="contacto">
-            <p><i class="fas fa-phone"></i> 222 143 0363</p>
-            <p><i class="fas fa-phone"></i> 951 588 1940</p>
-            <p><i class="fab fa-whatsapp"></i> 222 824 8537</p>
-            <p><i class="fas fa-envelope"></i> elvinhuitziloperacionessacor@gmail.com</p>
-            <p><i class="fas fa-envelope"></i> armandocortessadmonsacor@gmail.com</p>
-            <p>
-                <i class="fab fa-facebook"></i>
-                <a href="https://www.facebook.com/SACORTRANSPORTES/" target="_blank">Facebook SACOR</a>
-            </p>
+    <section id="contacto" class="bg-darker">
+        <h2 class="title-glow">Contáctanos</h2>
+        <div class="contacto-box">
+            <div class="contacto-info">
+                <h3>¿Tienes un envío en puerta?</h3>
+                <p>Ponte en contacto con nosotros y con gusto realizamos tu cotización sin compromiso.</p>
+                <div class="contacto-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <strong>Teléfonos:</strong>
+                        <p>222 143 0363 | 951 588 1940</p>
+                    </div>
+                </div>
+                <div class="contacto-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <strong>WhatsApp Directo:</strong>
+                        <p>222 824 8537</p>
+                    </div>
+                </div>
+                <div class="contacto-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Correos Electrónicos:</strong>
+                        <p>elvinhuitziloperacionessacor@gmail.com</p>
+                        <p>armandocortessadmonsacor@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contacto-item">
+                    <i class="fab fa-facebook"></i>
+                    <div>
+                        <strong>Redes Sociales:</strong>
+                        <p><a href="https://www.facebook.com/SACORTRANSPORTES/" target="_blank">Facebook SACOR</a></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -194,6 +268,12 @@
         <p>© 2026 Transportes SACOR | Todos los derechos reservados.</p>
     </footer>
 
+    <!-- Botón de WhatsApp Flotante -->
+    <a href="https://wa.me/522228248537?text=Hola,%20me%20gustaría%20solicitar%20una%20cotización." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Botón Volver Arriba -->
     <a href="#inicio" class="top">
         <i class="fas fa-arrow-up"></i>
     </a>
