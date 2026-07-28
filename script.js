@@ -1,529 +1,104 @@
 /* =========================
-   VARIABLES Y BASE
+   MENÚ HAMBURGUESA
 ========================= */
-:root {
-    --primary: #e60000;
-    --primary-hover: #ff2b2b;
-    --dark-bg: #0d0d0d;
-    --card-bg: #161616;
-    --text-white: #ffffff;
-    --text-gray: #b3b3b3;
-    --glow-shadow: 0 0 20px rgba(230, 0, 0, 0.4);
-}
+const menuBtn = document.querySelector(".menu-btn");
+const menu = document.querySelector(".menu");
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--dark-bg);
-    color: var(--text-white);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
+menuBtn.addEventListener("click", () => {
+    menu.classList.toggle("active");
+});
 
 /* =========================
-   TITULOS Y EFECTOS
+   CERRAR MENÚ AL SELECCIONAR
 ========================= */
-.title-glow {
-    text-align: center;
-    font-size: 40px;
-    font-weight: 800;
-    color: var(--text-white);
-    margin-bottom: 40px;
-    position: relative;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+const enlaces = document.querySelectorAll(".menu a");
 
-.title-glow::after {
-    content: '';
-    display: block;
-    width: 80px;
-    height: 4px;
-    background: var(--primary);
-    margin: 10px auto 0;
-    border-radius: 2px;
-    box-shadow: var(--glow-shadow);
-}
-
-.subtitle {
-    text-align: center;
-    font-size: 28px;
-    margin: 60px 0 30px;
-    color: var(--primary-hover);
-}
-
-.section-desc {
-    text-align: center;
-    color: var(--text-gray);
-    margin-top: -25px;
-    margin-bottom: 35px;
-}
-
-.bg-darker {
-    background-color: transparent;
-}
+enlaces.forEach(enlace => {
+    enlace.addEventListener("click", () => {
+        menu.classList.remove("active");
+    });
+});
 
 /* =========================
-   NAVEGACIÓN
+   CAMBIAR COLOR DEL MENÚ AL HACER SCROLL
+   (Ajustado a la paleta negro/rojo)
 ========================= */
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: transparent;
-    backdrop-filter: blur(10px);
-    border-bottom: transparent;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 60px;
-    z-index: 1000;
-    box-shadow:  transparent;
-}
+window.addEventListener("scroll", () => {
+    const nav = document.querySelector("nav");
 
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    width: 50px;
-    height: 50px;
-    margin-right: 12px;
-    border-radius: 50%;
-}
-
-.logo h2 {
-    font-size: 20px;
-    font-weight: 700;
-}
-
-.logo h2 span {
-    color: var(--primary);
-}
-
-.menu {
-    display: flex;
-    list-style: none;
-}
-
-.menu li {
-    margin-left: 25px;
-}
-
-.menu a {
-    color: var(--text-white);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 15px;
-    transition: .3s;
-}
-
-.menu a:hover {
-    color: var(--primary-hover);
-    text-shadow: 0 0 10px rgba(255, 43, 43, 0.6);
-}
-
-.menu-btn {
-    display: none;
-    font-size: 26px;
-    cursor: pointer;
-    color: var(--primary);
-}
-
-/* =========================
-   HERO / PORTADA
-========================= */
-header {
-    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("fondo.jpeg");
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 20px;
-}
-
-.hero-content {
-    max-width: 850px;
-    margin-top: 350px;
-}
-
-.badge {
-    background: rgba(230, 0, 0, 0.2);
-    color: var(--primary-hover);
-    border: 1px solid var(--primary);
-    padding: 6px 18px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.hero h1 {
-    font-size: 65px;
-    font-weight: 800;
-    margin: 20px 0 10px;
-    line-height: 1.1;
-}
-
-.hero h1 span {
-    color: var(--primary);
-    text-shadow: var(--glow-shadow);
-}
-
-.hero p {
-    font-size: 22px;
-    color: var(--text-gray);
-    margin-bottom: 35px;
-}
-
-.hero-btns {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
-.btn {
-    padding: 14px 35px;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 16px;
-    text-decoration: none;
-    transition: .4s;
-}
-
-.btn-primary {
-    background: linear-gradient(45deg, #c00000, #ff2b2b);
-    color: white;
-    box-shadow: var(--glow-shadow);
-}
-
-.btn-primary:hover {
-    transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 0 30px rgba(255, 43, 43, 0.8);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-}
-
-.btn-secondary:hover {
-    border-color: var(--primary);
-    color: var(--primary-hover);
-}
-
-
-/* =========================
-   BARRA DE ESTADÍSTICAS
-========================= */
-.stats-bar {
-    background: #111;
-    border-top: 1px solid #222;
-    border-bottom: 2px solid var(--primary);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    padding: 30px 10%;
-    gap: 20px;
-    text-align: center;
-}
-
-.cert img {
-    /* Opción A: Tamaño Fijo en Pixeles */
-    width: 200px;  /* Ancho de la imagen */
-    height: 150px; 
+    if (window.scrollY > 50) {
+        nav.style.background = 'transparent'; // Negro puro al bajar
+        nav.style.boxShadow = "0 4px 15px rgba(192, 0, 0, 0.3)"; // Sombra roja sutil
+        nav.style.transition = "0.4s";
+    } else {
+        nav.style.background = "#111111"; // Fondo inicial
+        nav.style.boxShadow = "0 3px 10px rgba(0, 0, 0, 0.5)";
     }
+});
 
-.stat-item i {
-    font-size: 35px;
-    color: var(--primary);
-    margin-bottom: 10px;
-}
+/* =========================
+   ANIMACIÓN APARICIÓN DE TARJETAS
+========================= */
+const tarjetas = document.querySelectorAll(".card, .valor, .servicio, .cert");
 
-.stat-item h3 {
-    font-size: 32px;
-    font-weight: 800;
-}
+const mostrarTarjetas = () => {
+    tarjetas.forEach(tarjeta => {
+        const posicion = tarjeta.getBoundingClientRect().top;
 
-.stat-item p {
-    color: var(--text-gray);
-    font-size: 14px;
+        if (posicion < window.innerHeight - 80) {
+            tarjeta.style.opacity = "1";
+            tarjeta.style.transform = "none"; // Permite que el hover de CSS funcione libremente
+            tarjeta.style.transition = "opacity 0.8s ease, transform 0.4s ease";
+        }
+    });
+};
+
+// Estado inicial antes de aparecer
+tarjetas.forEach(tarjeta => {
+    tarjeta.style.opacity = "0";
+    tarjeta.style.transform = "translateY(40px)";
+});
+
+window.addEventListener("scroll", mostrarTarjetas);
+window.addEventListener("load", mostrarTarjetas);
+
+/* =========================
+   BOTÓN VOLVER ARRIBA
+========================= */
+const botonTop = document.querySelector(".top");
+
+if (botonTop) {
+    botonTop.style.display = "none";
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+            botonTop.style.display = "flex";
+        } else {
+            botonTop.style.display = "none";
+        }
+    });
 }
 
 /* =========================
-   SECCIONES Y MARCOS
+   EFECTO EN EL BOTÓN HERO
 ========================= */
-section {
-    padding: 90px 10%;
-}
+const boton = document.querySelector(".btn");
 
-.quienes-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-}
+if (boton) {
+    boton.addEventListener("mouseover", () => {
+        boton.style.transform = "scale(1.05)";
+    });
 
-.quienes-texto p {
-    font-size: 17px;
-    color: #ccc;
-    margin-bottom: 20px;
-}
-
-.puntos-clave {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 20px;
-    font-weight: 600;
-}
-
-.puntos-clave i {
-    color: var(--primary);
-    margin-right: 8px;
-}
-
-.img-frame {
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-    border: 2px solid var(--primary);
-    box-shadow: var(--glow-shadow);
-}
-
-.img-frame img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform .5s;
-}
-
-.img-frame:hover img {
-    transform: scale(1.04);
+    boton.addEventListener("mouseout", () => {
+        boton.style.transform = "scale(1)";
+    });
 }
 
 /* =========================
-   TARJETAS
+   AÑO AUTOMÁTICO EN FOOTER
 ========================= */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
+const footer = document.querySelector("footer p");
 
-.cards-2 {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-}
-
-.card, .servicio, .cert, .valor {
-    background: var(--card-bg);
-    border: 1px solid #282828;
-    border-radius: 16px;
-    padding: 35px 25px;
-    text-align: center;
-    transition: all .4s ease;
-    position: relative;
-}
-
-.card:hover, .servicio:hover, .cert:hover, .valor:hover {
-    border-color: var(--primary);
-    transform: translateY(-8px);
-    box-shadow: var(--glow-shadow);
-    background: #1c1c1c;
-}
-
-.card i, .servicio i, .cert i, .valor i {
-    font-size: 42px;
-    color: var(--primary);
-    margin-bottom: 20px;
-}
-
-.card h3, .servicio h3, .cert h3, .valor h3 {
-    font-size: 20px;
-    margin-bottom: 12px;
-}
-
-.servicio p, .card p {
-    color: var(--text-gray);
-    font-size: 14px;
-}
-
-/* =========================
-   ESTADOS DE COBERTURA
-========================= */
-.estados {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 40px;
-}
-
-.estados span {
-    background: #1f1f1f;
-    border: 1px solid var(--primary);
-    color: white;
-    padding: 10px 22px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 600;
-    transition: .3s;
-}
-
-.estados span:hover {
-    background: var(--primary);
-    box-shadow: 0 0 15px rgba(230, 0, 0, 0.6);
-    transform: scale(1.05);
-}
-
-.mapa-container {
-    max-width: 850px;
-    margin: 0 auto;
-}
-
-/* =========================
-   CONTACTO
-========================= */
-.contacto-box {
-    max-width: 800px;
-    margin: 0 auto;
-    background: var(--card-bg);
-    border: 2px solid var(--primary);
-    border-radius: 20px;
-    padding: 40px;
-    box-shadow: var(--glow-shadow);
-}
-
-.contacto-info h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: var(--primary-hover);
-}
-
-.contacto-info p {
-    color: var(--text-gray);
-    margin-bottom: 25px;
-}
-
-.contacto-item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-.contacto-item i {
-    font-size: 26px;
-    color: var(--primary);
-    background: rgba(230, 0, 0, 0.1);
-    padding: 15px;
-    border-radius: 50%;
-}
-
-.contacto-item a {
-    color: var(--primary-hover);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* =========================
-   BOTONES FLOTANTES Y FOOTER
-========================= */
-footer {
-    background: #000;
-    text-align: center;
-    padding: 25px;
-    border-top: 1px solid #222;
-    color: var(--text-gray);
-    font-size: 14px;
-}
-
-.whatsapp-float {
-    position: fixed;
-    bottom: 25px;
-    left: 25px;
-    width: 60px;
-    height: 60px;
-    background: #25d366;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 32px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-    z-index: 1000;
-    transition: transform .3s;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.1);
-}
-
-.top {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 50px;
-    height: 50px;
-    background: var(--primary);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    text-decoration: none;
-    box-shadow: var(--glow-shadow);
-    z-index: 1000;
-}
-
-/* =========================
-   RESPONSIVE EN MÓVIL
-========================= */
-@media (max-width: 900px) {
-
-    nav { padding: 15px 25px; }
-
-    .menu-btn { display: block; }
-
-    .menu {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 80px);
-        background: #0d0d0d;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: left .4s ease;
-    }
-
-    .menu.active { left: 0; }
-
-    .menu li { margin: 18px 0; }
-
-    .menu a { font-size: 22px; }
-
-    .hero h1 { font-size: 40px; }
-
-    .hero p { font-size: 18px; }
-
-    .hero-btns { flex-direction: column; gap: 12px; }
-
-    .quienes-grid { grid-template-columns: 1fr; }
-
-    section { padding: 60px 20px; }
+if (footer) {
+    footer.innerHTML = `© ${new Date().getFullYear()} Transportes SACOR | Todos los derechos reservados.`;
 }
