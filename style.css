@@ -489,26 +489,25 @@ footer {
     z-index: 1000;
 }
 
-/* =========================
-   RESPONSIVE EN MÓVIL
-========================= */
 @media (max-width: 900px) {
 
-    nav { padding: 15px 25px; }
+    nav { padding: 15px 20px; }
 
     .menu-btn { display: block; }
 
     .menu {
         position: fixed;
-        top: 80px;
+        top: 0;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 80px);
+        height: 100vh;
+        height: 100dvh; /* Adapta el menú full-screen en Safari */
         background: #0d0d0d;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         transition: left .4s ease;
+        z-index: -1;
     }
 
     .menu.active { left: 0; }
@@ -516,10 +515,6 @@ footer {
     .menu li { margin: 18px 0; }
 
     .menu a { font-size: 22px; }
-
-    .hero h1 { font-size: 40px; }
-
-    .hero p { font-size: 18px; }
 
     .hero-btns { flex-direction: column; gap: 12px; }
 
